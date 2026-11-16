@@ -16,4 +16,11 @@ DB[:jobs].insert(name: 'Ruby React', place: 'Contract', company_id: 2)
 DB[:jobs].insert(name: 'React', place: 'Remote', company_id: 3)
 DB[:jobs].insert(name: 'Ruby on Rails', place: 'Remote', company_id: 4)
 
-puts "Данные загружены."
+puts "Добавляем соискателей"
+DB[:geeks].insert(name: 'Mike', stack: 'Sinatra React')
+DB[:geeks].insert(name: 'Alex', stack: 'Ruby React')
+
+puts "Добавляем заявки"
+DB[:applies].insert(job_id: 1, geek_id: 1, read: true, invited: false)
+DB[:applies].insert(job_id: 2, geek_id: 2, read: false, invited: false)
+DB[:applies].insert(job_id: 3, geek_id: 1, read: true, invited: true)
